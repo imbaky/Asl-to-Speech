@@ -6,4 +6,4 @@ Myo wristband
 
 Spell Check
 
-Naunce Text to speech 
+Nuance Text to speech 
