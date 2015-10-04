@@ -53,13 +53,16 @@ class SignListener(Leap.Listener):
 		for hand in frame.hands:
 			handType = "Left hand" if hand.is_left else "Right hand"
 		 	
-		 	# Number One
-			if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
-				and hand.fingers[1].direction.y > 0\
+			if hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
-				print "One"
+				if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0:			
+				 	# Number One					
+					print "One"
+				else:
+					# Letter D
+					print "D"
 			# Number Two
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
@@ -74,14 +77,20 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
-				print "Three"						
-			# Number Four	
+				print "Three"							
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-				print "Four"	
+					# Letter B
+					if abs(hand.fingers[1].direction.x - hand.fingers[2].direction.x) < 0.15\
+					and abs(hand.fingers[2].direction.x - hand.fingers[3].direction.x) < 0.15\
+					and abs(hand.fingers[3].direction.x - hand.fingers[4].direction.x) < 0.15:
+						print "B"
+					# Number Four						
+					else: 
+						print "Four"	
 			# Number Five
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and hand.fingers[0].direction.y > 0\
@@ -121,9 +130,30 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-				print "Nine"												
+				print "Nine"		
+			elif hand.fingers[1].direction.y < 0\
+				and hand.fingers[2].direction.y < 0\
+				and hand.fingers[3].direction.y < 0\
+				and hand.fingers[4].direction.y < 0:
+
+				if hand.fingers[1].direction.z > 0\
+					and hand.fingers[2].direction.z > 0\
+					and hand.fingers[3].direction.z > 0\
+					and hand.fingers[4].direction.z > 0:
+
+					# Letter S
+					if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) >= -0.5:
+						print "S"	
+					# Letter A						
+					else:
+						print "A"
+				# Letter C						
+				else:
+					print "C"
 			else:
 				print "Did not detect anything"
+			
+			# print hand.fingers[1].direction.x - hand.fingers[2].direction.x
 
 def is_hand_right(isRight):
 	if isRight:
