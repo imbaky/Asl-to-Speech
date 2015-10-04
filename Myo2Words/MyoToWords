@@ -61,6 +61,9 @@ lowAmplitudeThreshold = 5
 #Glitch amplitude
 glitchAmplitude = 20
 
+#Global variable to hold the recognized word
+recognizedWord = ""
+
 #A function that evaluates if the array is worthy to be taken into consideration or not.
 # There should be a minimum number of irrelevant readings and no big variation in the data
 def ComputeAxisValidity(Axis):
@@ -173,6 +176,7 @@ def AnalyzeDirection(pInput, rInput, yInput, t, numberOfSamples):
         #Now that all is set, if x has a high amplitude then it's a hello, else it's a please
         if( pExtreme > lowAmplitudeThreshold):
             print "Recognized word: Hello!"
+            recognizedWord = "Hello""
 
     elif isPitchValid and not isYawValid:
         #Potentilly a thanks or welcome
@@ -187,8 +191,10 @@ def AnalyzeDirection(pInput, rInput, yInput, t, numberOfSamples):
         #A High-Low is You're welcome, and Low-High is Thanks
         if(pDir[0] == 'D'):
             print "Recognized word: You're Welcome!"
+            recognizedWord = "You're Welcome!"
         else:
             print "Recognized word: Thanks!"
+            recognizedWord = "Thanks"
 
 
     else:
@@ -208,6 +214,7 @@ def AnalyzeDirection(pInput, rInput, yInput, t, numberOfSamples):
         #Where is Low-High roll. High-Low roll is unrecognized
         if(rDir[0] == 'U'):
             print "Recognized word: Where?"
+            recognizedWord = "Where?"
         else:
             #Unrecognized word
             return
@@ -232,50 +239,50 @@ def getMyoInput():
     hub = libmyo.Hub()
     hub.run(1000, feed)
 
-    try:
-        myo = feed.wait_for_single_device(timeout=10.0)  # seconds
-        print "Trying to connect..."
-        if not myo:
-            print("No Myo connected after 10 seconds.")
-            sys.exit()
 
-        print "Connected!!"
+    myo = feed.wait_for_single_device(timeout=10.0)  # seconds
+    print "Trying to connect..."
+    if not myo:
+        print("No Myo connected after 10 seconds.")
+        sys.exit()
 
-        pitch = 0
-        roll = 0
-        yaw  = 0
+    print "Connected!!"
 
-        if hub.running and myo.connected:
+    pitch = 0
+    roll = 0
+    yaw  = 0
 
-            myo.vibrate('short')
-            time.sleep(1)
+    if hub.running and myo.connected:
 
-            #Register the input for recordTiming seconds
-            for threeSecond in range( int(recordingTime * samplingRate)):
-                #Take samplingRate reading per second
-                time.sleep( 1.0 / samplingRate)
+        myo.vibrate('short')
+        time.sleep(1)
 
-                #Read the accelerometer
-                quat = myo.orientation
+        #Register the input for recordTiming seconds
+        for threeSecond in range( int(recordingTime * samplingRate)):
+            #Take samplingRate reading per second
+            time.sleep( 1.0 / samplingRate)
 
-                pitch = computePitch(quat.x, quat.y, quat.z, quat.w)
-                roll = computeRoll(quat.x, quat.y, quat.z, quat.w)
-                yaw = computeYaw(quat.x, quat.y, quat.z, quat.w)
+            #Read the accelerometer
+            quat = myo.orientation
 
-                pitch_n = int((pitch + math.pi/2.0) / math.pi * 40)
-                roll_n =  int((roll + math.pi )/( math.pi * 2.0) * 120)
-                yaw_n = int((yaw + math.pi)/(math.pi * 2.0) * 40)
+            pitch = computePitch(quat.x, quat.y, quat.z, quat.w)
+            roll = computeRoll(quat.x, quat.y, quat.z, quat.w)
+            yaw = computeYaw(quat.x, quat.y, quat.z, quat.w)
+
+            pitch_n = int((pitch + math.pi/2.0) / math.pi * 40)
+            roll_n =  int((roll + math.pi )/( math.pi * 2.0) * 120)
+            yaw_n = int((yaw + math.pi)/(math.pi * 2.0) * 40)
 
 
-                #Add it to the input list
-                pitchInput.append(pitch_n)
-                rollInput.append(roll_n)
-                yawInput.append(yaw_n)
+            #Add it to the input list
+            pitchInput.append(pitch_n)
+            rollInput.append(roll_n)
+            yawInput.append(yaw_n)
 
-            AnalyzeDirection(pitchInput, smoothedRoll, smoothedYaw, recordingTime, samplingRate)
+        AnalyzeDirection(pitchInput, smoothedRoll, smoothedYaw, recordingTime, samplingRate)
 
-            pitchInput = []
-            rollInput = []
-            yawInput = []
+        pitchInput = []
+        rollInput = []
+        yawInput = []
 
-        hub.shutdown()
+    hub.shutdown()
