@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os, inspect, sys, thread, time
 
 src_dir = os.path.dirname(inspect.getfile(inspect.currentframe()))
@@ -143,12 +145,16 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.z > 0\
 				and hand.fingers[3].direction.z > 0\
 				and hand.fingers[4].direction.z > 0:
-
-				if hand.fingers[0].direction.y > 0:
+				# Letter A
+				if hand.fingers[0].direction.y > 0.15\
+					and (is_hand_right(hand.is_right)*hand.fingers[0].direction.x < 0):
 					print "A"
-				else:
+				#Letter S					
+				elif hand.fingers[0].direction.y > -0.12:
 					print "S"
-					
+				#Letter E					
+				else:
+					print "E"
 			# Letter G
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[1].direction.x) < 0\
@@ -163,6 +169,7 @@ class SignListener(Leap.Listener):
 				and (is_hand_right(hand.is_right)*hand.fingers[3].direction.x) > 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[4].direction.x) > 0:
 				print "H"			
+
 			else:
 				print "Did not detect anything"
 			
