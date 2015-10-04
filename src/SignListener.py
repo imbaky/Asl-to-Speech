@@ -59,12 +59,12 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
-				if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0:			
+				if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0:
 				 	# Number One					
 					print "One"
 				else:
 					# Letter D
-					print "D"
+					print "D"			
 			# Number Two
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
@@ -159,7 +159,7 @@ class SignListener(Leap.Listener):
 				if (is_hand_right(hand.is_right)*hand.fingers[2].direction.x) > 0:
 					print "G"
 				else:
-					print "H"		
+					print "H"					
 			else:
 				print "Did not detect anything"
 			
