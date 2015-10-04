@@ -85,13 +85,9 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-					# Letter B
-					if abs(hand.fingers[1].direction.x - hand.fingers[2].direction.x) < 0.15\
-					and abs(hand.fingers[2].direction.x - hand.fingers[3].direction.x) < 0.15\
-					and abs(hand.fingers[3].direction.x - hand.fingers[4].direction.x) < 0.15:
+					if abs(hand.fingers[1].direction.x - hand.fingers[4].direction.x) < 0.15:
 						print "B"
-					# Number Four						
-					else: 
+					else:
 						print "Four"	
 			# Number Five
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
