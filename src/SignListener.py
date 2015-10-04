@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os, inspect, sys, thread, time
 
 src_dir = os.path.dirname(inspect.getfile(inspect.currentframe()))
@@ -64,6 +66,7 @@ class SignListener(Leap.Listener):
 				else:
 					# Letter D
 					self.text = "D"			
+
 			# Number Two
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
@@ -79,6 +82,7 @@ class SignListener(Leap.Listener):
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
 				self.text = "Three"							
+
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y > 0\
@@ -88,6 +92,7 @@ class SignListener(Leap.Listener):
 						self.text = "B"
 					else:
 						self.text = "Four"	
+
 			# Number Five
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and hand.fingers[0].direction.y > 0\
@@ -132,6 +137,7 @@ class SignListener(Leap.Listener):
 					self.text = "F"
 				else:
 					self.text = "Nine"		
+		
 			elif hand.fingers[1].direction.y < 0\
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y < 0\
@@ -150,6 +156,7 @@ class SignListener(Leap.Listener):
 				#Letter E					
 				else:
 					self.text = "E"
+
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[1].direction.x) < 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[3].direction.x) > 0\
