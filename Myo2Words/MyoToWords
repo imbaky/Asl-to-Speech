@@ -1,5 +1,7 @@
 __author__ = 'e_tak_000'
 
+# The work is based over Niklas Rosenstein's myo-python
+
 import myo as libmyo; libmyo.init()
 import time
 import sys
@@ -8,6 +10,9 @@ import math
 class Listener(libmyo.DeviceListener):
 
     def on_connect(self, myo, timestamp):
+        print("Hello, Myo!")
+        myo.vibrate('short')
+        myo.vibrate('short')
         myo.vibrate('short')
 
 
