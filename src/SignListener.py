@@ -28,14 +28,14 @@ class SignListener(Leap.Listener):
 	def on_connect(self, controller):
 	    print "Connected"
 
-	    controller.enable_gesture(Leap.Gesture.TYPE_CIRCLE); 
+	    controller.enable_gesture(Leap.Gesture.TYPE_CIRCLE);
 
 	def on_disconnect(self, controller):
 	    # Note: not dispatched when running in a debugger.
-	    print "Disconnected"    
+	    print "Disconnected"
 
 	def on_exit(self, controller):
-	    print "Exited"     
+	    print "Exited"
 
 	def state_string(self, state):
 	    if state == Leap.Gesture.STATE_START:
@@ -48,24 +48,24 @@ class SignListener(Leap.Listener):
 			return "STATE_STOP"
 
 		if state == Leap.Gesture.STATE_INVALID:
-			return "STATE_INVALID"    
-			
+			return "STATE_INVALID"
+
 	def on_frame(self, controller):
 	    # Get the most recent frame and report some basic information
 		frame = controller.frame()
 		for hand in frame.hands:
 			handType = "Left hand" if hand.is_left else "Right hand"
-		 	
+
 			if hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
 				if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0:
-				 	# Number One					
+				 	# Number One
 					self.text = "One"
 				else:
 					# Letter D
-					self.text = "D"			
+					self.text = "D"
 
 			# Number Two
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
@@ -73,15 +73,15 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
-				self.text = "Two"		
-			# Number Three		
+				self.text = "Two"
+			# Number Three
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and hand.fingers[0].direction.y > 0\
 				and hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
-				self.text = "Three"							
+				self.text = "Three"
 
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
@@ -91,7 +91,7 @@ class SignListener(Leap.Listener):
 					if abs(hand.fingers[1].direction.x - hand.fingers[4].direction.x) < 0.15:
 						self.text = "B"
 					else:
-						self.text = "Four"	
+						self.text = "Four"
 
 			# Number Five
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
@@ -100,7 +100,7 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-				self.text = "Five"	
+				self.text = "Five"
 			# Number Six
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[0].direction.y > 0\
@@ -109,7 +109,7 @@ class SignListener(Leap.Listener):
 				and hand.fingers[3].direction.y > 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[4].direction.x) < 0\
 				and hand.fingers[4].direction.y < 0:
-				self.text = "Six"			
+				self.text = "Six"
 			# Number Seven
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[0].direction.y > 0\
@@ -117,14 +117,14 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y > 0:
-				self.text = "Seven"	
+				self.text = "Seven"
 			# Number Eight
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-				self.text = "Eight"	
+				self.text = "Eight"
 			# Number Nine
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and hand.fingers[0].direction.y > 0\
@@ -136,8 +136,8 @@ class SignListener(Leap.Listener):
 					and abs(hand.fingers[3].direction.x - hand.fingers[4].direction.x) < 0.15:
 					self.text = "F"
 				else:
-					self.text = "Nine"		
-		
+					self.text = "Nine"
+
 			elif hand.fingers[1].direction.y < 0\
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y < 0\
@@ -150,25 +150,22 @@ class SignListener(Leap.Listener):
 				if hand.fingers[0].direction.y > 0.15\
 					and (is_hand_right(hand.is_right)*hand.fingers[0].direction.x < 0):
 					self.text = "A"
-				#Letter S					
+				#Letter S
 				elif hand.fingers[0].direction.y > -0.12:
 					self.text = "S"
-				#Letter E					
+				#Letter E
 				else:
 					self.text = "E"
 
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[1].direction.x) < 0\
 				and (is_hand_right(hand.is_right)*hand.fingers[3].direction.x) > 0\
-				and (is_hand_right(hand.is_right)*hand.fingers[4].direction.x) > 0:				
+				and (is_hand_right(hand.is_right)*hand.fingers[4].direction.x) > 0:
 
 				if (is_hand_right(hand.is_right)*hand.fingers[2].direction.x) > 0:
 					self.text = "G"
 				else:
 					self.text = "H"
-			# elif frame.hand(0) and frame.hand(2):
-			# 	self.text=""
-
 
 			if self.text != self.prev_frame_text:
 				textToSpeech(self.text)
@@ -203,4 +200,5 @@ def main():
 
 if __name__ == "__main__":
 	main()
-	# print sys.platform
+
+#python2 SignListener.py

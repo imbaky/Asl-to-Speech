@@ -13,9 +13,7 @@ import urllib.parse
 import uuid
 import wave
 import pyaudio
-
 import asyncio
-
 import aiohttp
 from aiohttp import websocket
 
@@ -76,7 +74,7 @@ class WebsocketConnection:
                 'app_id': app_id,
                 'signature': hmac.new(app_key,datestr.encode('ascii')+b' '+app_id.encode('utf-8'),hashlib.sha256).hexdigest()
             }
-    
+
             response = yield from aiohttp.request(
                 'get', url + '?' + urllib.parse.urlencode(params),
                 headers={
@@ -110,7 +108,7 @@ class WebsocketConnection:
         if key != match:
             raise ValueError("Handshake error - Invalid challenge response")
 
-        # switch to websocket protocol
+        # Switch to websocket protocol
         self.connection = response.connection
         self.stream = self.connection.reader.set_parser(websocket.WebSocketParser)
         self.writer = websocket.WebSocketWriter(self.connection.writer)
@@ -125,7 +123,7 @@ class WebsocketConnection:
             return (self.MSG_AUDIO, wsmsg.data)
 
     def send_message(self, msg):
-        log(msg,sending=True)
+        # log(msg,sending=True)
         self.writer.send(json.dumps(msg))
 
     def send_audio(self, audio):
@@ -164,9 +162,9 @@ def do_synthesis(loop, url, app_id, app_key, input_text, output_file, use_speex=
     })
 
     tp, msg = yield from client.receive()
-   # log(msg) # Should be a connected message
+    # log(msg) # Should be a connected message
 
-    # synthesize
+    # Synthesize
     client.send_message({
         'message': 'query_begin',
         'transaction_id': 123,
@@ -206,11 +204,11 @@ def do_synthesis(loop, url, app_id, app_key, input_text, output_file, use_speex=
             tp,msg = yield from client.receive()
 
             if tp == client.MSG_JSON:
-               # log(msg)
+                # log(msg)
                 if msg['message'] == 'query_end':
                     break
             else:
-               # log('Got %d bytes of audio' % len(msg))
+                # log('Got %d bytes of audio' % len(msg))
                 if decoder is not None:
                     pcm = decoder.decode(msg)
                     f.write(pcm)
@@ -265,8 +263,7 @@ def main():
     convertToWav(output_file)
     playWav(output_file+'.wav')
 
-    # python wsclient.py creds.json synthesize "hey how's it going" output.pcm
-
+    # python3 tts.py creds.json "Hello, how are you?" output.pcm
 
 if __name__ == '__main__':
     main()
