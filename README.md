@@ -109,8 +109,14 @@ Click to watch a short video demo:
 
 * Change the **File name** "\*.txt" to **creds.json**
 
-* Change the **Save as type** Text Document(\*.txt) to **All Files**
+* Change the **Save as type** "Text Document(\*.txt)" to **All Files**
 
+* You can now test the speech module
+
+  ```
+    py -3 tts.py creds.json "Hello, how are you?" output.pcm
+  ```
+  
 At this point, all the set ups should work and you can start to code.
 
 
