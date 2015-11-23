@@ -61,6 +61,11 @@ Click to watch a short video demo:
 
 * Go to [Myo](https://developer.thalmic.com/downloads)'s website and install the sdk.
 
+#### Setting Up the project 
+
+* Download this [project](https://github.com/imbaky/Asl-to-Speech/archive/master.zip)
+* Extract on your computer
+* Open command prompt (Click on **Start**, search for "**cmd**" and click on it)
 
 At this point, all the set ups should work and you can start to code.
 
