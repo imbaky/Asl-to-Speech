@@ -55,11 +55,11 @@ Click to watch a short video demo:
 
 #### Leap Motion Installer & SDK
 
-* Go to [Leap Motion](https://developer.leapmotion.com/downloads/skeletal-beta?platform=windows&version=2.3.1.31549)'s website and install the sdk.
+* Go to [Leap Motion](https://developer.leapmotion.com/downloads/skeletal-beta?platform=windows&version=2.3.1.31549)'s website and install the SDK.
 
 #### Myo Client and SDK
 
-* Go to [Myo](https://developer.thalmic.com/downloads)'s website and install the sdk.
+* Go to [Myo](https://developer.thalmic.com/downloads)'s website and install the Myo Connect and SDK.
 
 #### Setting Up the project 
 
@@ -88,7 +88,7 @@ Click to watch a short video demo:
     pip3 install -r pip_requirements.txt
   ```
 
-* Open Notepad on command prompt
+* Write this command on command prompt to open notepad
 
   ```
     notepad
