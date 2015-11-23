@@ -72,10 +72,21 @@ Click to watch a short video demo:
     cd Desktop\Asl-to-Speech
   ```
 * Write this command on command prompt
+
   ```
     pip install -r pip_requirements.txt
   ```
+  
+  It is normal if you get the following error: 
+  ```
+    Command "python setup.py egg_info" failed with error code 1 in c:\users\[username]\appdata\local\temp\pip-build-syvzsr\aiohttp"
+  ```
+  
+* Write this command on command prompt
 
+  ```
+    pip3 install -r pip_requirements.txt
+  ```
 
 
 At this point, all the set ups should work and you can start to code.
