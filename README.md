@@ -16,9 +16,10 @@ Click to watch a short video demo:
 
 ## Components
 
+## Windows Machine (For now)
+
 #### Hardware Requirements
 
-* Windows Machine (For now)
 * [Leap Motion Controller](https://www.leapmotion.com/)
 * [Myo gesture control armband](https://myo.com)
 
