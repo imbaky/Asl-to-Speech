@@ -94,7 +94,7 @@ Click to watch a short video demo:
     notepad
   ```
 
-* Add the app **ID** and **key** inside the quotes ("") that you saved it before
+* Paste the following inside notepad 
 
   ```
     {
@@ -102,6 +102,14 @@ Click to watch a short video demo:
        "app_key": ""
     }  
   ```
+
+* Add the app **ID** and **key** inside the double quotes ("") that you saved before
+
+* Press **ctrl** + **s**
+
+* Change the **File name** "*.txt" to **creds.json**
+
+* Change the **Save as type** Text Document(*.txt) to **All Files**
 
 At this point, all the set ups should work and you can start to code.
 
