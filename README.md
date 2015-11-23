@@ -16,7 +16,7 @@ Click to watch a short video demo:
 
 ## Components
 
-## Windows Machine (For now)
+### Windows Machine (For now)
 
 #### Hardware Requirements
 
