@@ -64,8 +64,14 @@ Click to watch a short video demo:
 #### Setting Up the project 
 
 * Download this [project](https://github.com/imbaky/Asl-to-Speech/archive/master.zip)
-* Extract on your computer
+* Extract on **Desktop**
 * Open command prompt (Click on **Start**, search for "**cmd**" and click on it)
+* Go to Desktop directory 
+
+Write this command on command prompt
+```
+  cd Desktop
+```
 
 At this point, all the set ups should work and you can start to code.
 
