@@ -42,16 +42,16 @@ Click to watch a short video demo:
 #### Python 2.7.10 and Python 3.5.1
 
 * Go to the link https://www.python.org/downloads/ 
-* Download Python 2.7.10 installer and install
-* Download Python 3.5.0 installer and install
+* Download Python **2.7.10** installer and install
+* Download Python **3.5.0** installer and install
 
 #### Nuance's Text-to-Speech API
 
 * Sign up a developper account on https://developer.nuance.com/public/index.php?task=home
-* Click on my account 
-* Click on Sandbox Credentials
-* Copy the ID from the ANDROID section and save it somewhere on your computer. We will need it later. The ID look something like this: "ABCDEFG_youremail_email_com_20151111002244"
-* Copy the HTTP Client Applications key from the same page also save it somewhere on your computer. The app key looks something like this: c7db49a73431f7b33kf408abc4eba7062c339f37bd66ee2d7a3a3109fede0dc6b9566ded8865a0ba4b396510240d165040b688fd1c762b96b15c9faf3aac75f3
+* Click on **my account**
+* Click on **Sandbox Credentials**
+* Copy the ID from the **ANDROID section** and save it somewhere on your computer. We will need it later. The ID look something like this: "ABCDEFG_youremail_email_com_20151111002244"
+* Copy the **HTTP Client Applications** key from the same page also save it somewhere on your computer. The app key looks something like this: c7db49a73431f7b33kf408abc4eba7062c339f37bd66ee2d7a3a3109fede0dc6b9566ded8865a0ba4b396510240d165040b688fd1c762b96b15c9faf3aac75f3
 
 #### Leap Motion Installer & SDK
 
