@@ -107,9 +107,9 @@ Click to watch a short video demo:
 
 * Press **ctrl** + **s**
 
-* Change the **File name** "*.txt" to **creds.json**
+* Change the **File name** "\*.txt" to **creds.json**
 
-* Change the **Save as type** Text Document(*.txt) to **All Files**
+* Change the **Save as type** Text Document(\*.txt) to **All Files**
 
 At this point, all the set ups should work and you can start to code.
 
