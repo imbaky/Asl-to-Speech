@@ -88,6 +88,20 @@ Click to watch a short video demo:
     pip3 install -r pip_requirements.txt
   ```
 
+* Open Notepad on command prompt
+
+  ```
+    notepad
+  ```
+
+* Add the app **ID** and **key** that you saved it before
+
+  ```
+    {
+       "app_id": "**ID**",
+       "app_key": "**key**"
+    }  
+  ```
 
 At this point, all the set ups should work and you can start to code.
 
