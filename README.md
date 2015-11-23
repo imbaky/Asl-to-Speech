@@ -1,12 +1,12 @@
 # Asl-to-Speech
 
-Asl-to-Speech is a wearable technology that translates American Sign Language (ASL) into speech. The goal of this project is to help people to facilitate communication using sign language.
+Asl-to-Speech is a wearable technology that translates American Sign Language (ASL) into speech. The goal of this project is to help people to facilitate communication using sign language. This project is able to translate numbers from 1 to 5. The code offers flexibility to add more numbers and letters if the user wishes to.
 
 ## How it works
 
-The [Leap Motion Controller](https://www.leapmotion.com/) uses infrared cameras to track the movement of your hands and fingers.
+The [Leap Motion Controller](https://www.leapmotion.com/) uses infrared cameras to track the movement of your hands and fingers. In this project, hand gestures are picked up by the Leap Motion and are translated into text. The text is then translated into speech by Nuance's speech platform.
 
-This project uses Nuance's Text-to-Speech (tts) API to translate the motion into speech.
+This project also has the option to use the [Myo gesture control armband](https://myo.com) to translate arm gestures into speech.
 
 ## Demo
 
