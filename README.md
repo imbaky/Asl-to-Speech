@@ -67,6 +67,7 @@ Click to watch a short video demo:
 * Extract on **Desktop**
 * Open command prompt (Click on **Start**, search for "**cmd**" and click on it)
 * Write this command on command prompt
+
   ```
     cd Desktop\Asl-to-Speech
   ```
