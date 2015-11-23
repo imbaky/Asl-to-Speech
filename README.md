@@ -98,8 +98,8 @@ Click to watch a short video demo:
 
   ```
     {
-       "app_id": "**ID**",
-       "app_key": "**key**"
+       "app_id": " **ID** ",
+       "app_key": " **key** "
     }  
   ```
 
