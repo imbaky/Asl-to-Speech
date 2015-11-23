@@ -94,12 +94,12 @@ Click to watch a short video demo:
     notepad
   ```
 
-* Add the app **ID** and **key** that you saved it before
+* Add the app **ID** and **key** inside the quotes ("") that you saved it before
 
   ```
     {
-       "app_id": " **ID** ",
-       "app_key": " **key** "
+       "app_id": "",
+       "app_key": ""
     }  
   ```
 
