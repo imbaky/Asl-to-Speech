@@ -111,11 +111,14 @@ Click to watch a short video demo:
 
 * Change the **Save as type** "Text Document(\*.txt)" to **All Files**
 
-* You can now test the speech module
+* You can now test the speech module (Make sure your speaker is turned on)
 
   ```
     py -3 tts.py creds.json "Hello, how are you?" output.pcm
   ```
+
+If you hear "Hello, how are you?" then it is working
+
   
 At this point, all the set ups should work and you can start to code.
 
