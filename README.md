@@ -44,6 +44,17 @@ Click to watch a short video demo:
 * Go to the link https://www.python.org/downloads/ 
 * Download Python **2.7.10** installer and install
 * Download Python **3.5.0** installer and install
+* Press *Start** and click on **Control Panel**
+* Click on **System and Security** then **System**
+* Click on **Advanced system settings**
+* Click on **Environment Variables** in the **Advanced** tab
+You should see this at this point
+![Alt](http://puu.sh/lxCVS/b136c76aea.png)
+* Click on the variable **Path** then click on **Edit**
+* Add at the end of the **Variable value** a **;** if it does not have one
+* Add **C:\Python27;C:\Python27\Scripts;C:\Python35;C:\Python35\Scripts;** after the **;**
+##### Make sure the paths **C:\Python27**, **C:\Python27\Scripts**, **C:\Python35**, **C:\Python35\Scripts** exist on your computer
+![Alt](http://puu.sh/lxD7D/0be92a4ef9.png)
 
 #### Nuance's Text-to-Speech API
 
