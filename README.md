@@ -56,6 +56,8 @@ You should see this at this point
 Make sure the paths **C:\Python27**, **C:\Python27\Scripts**, **C:\Python35**, **C:\Python35\Scripts** exist on your computer
 ![Alt](http://puu.sh/lxD7D/0be92a4ef9.png)
 
+At this point, you should be able to run **py**, **py -3**, **pip2** and **pip3** on command prompt (click on **Start**, search for **cmd** and click on it)
+
 #### Nuance's Text-to-Speech API
 
 * Sign up a developper account on https://developer.nuance.com/public/index.php?task=home
