@@ -53,7 +53,7 @@ You should see this at this point
 * Click on the variable **Path** then click on **Edit**
 * Add at the end of the **Variable value** a **;** if it does not have one
 * Add **C:\Python27;C:\Python27\Scripts;C:\Python35;C:\Python35\Scripts;** after the **;**
-##### Make sure the paths **C:\Python27**, **C:\Python27\Scripts**, **C:\Python35**, **C:\Python35\Scripts** exist on your computer
+Make sure the paths **C:\Python27**, **C:\Python27\Scripts**, **C:\Python35**, **C:\Python35\Scripts** exist on your computer
 ![Alt](http://puu.sh/lxD7D/0be92a4ef9.png)
 
 #### Nuance's Text-to-Speech API
