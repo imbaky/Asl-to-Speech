@@ -86,8 +86,13 @@ At this point, you should be able to run **py**, **py -3**, **pip2** and **pip3*
 #### Leap Motion Installer & SDK
 
 * Go to [Leap Motion](https://developer.leapmotion.com/downloads/skeletal-beta?platform=windows&version=2.3.1.31549)'s website and install the **SDK**.
+* Connect Leap Motion on your computer
 * You will be able to use the program **Leap Motion Visualizer** to visualize your hand(s) on the computer
 You can now start to practice **American Sign Language** and see it on your computer screen
+
+At this point, you should be able to play with the Leap Motion on your computer
+
+![Alt](http://puu.sh/lyXLR/fb9c733349.jpg)
 
 #### Myo Client and SDK
 
