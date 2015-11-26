@@ -90,6 +90,8 @@ At this point, you should be able to run **py**, **py -3**, **pip2** and **pip3*
 * You will be able to use the program **Leap Motion Visualizer** to visualize your hand(s) on the computer
 You can now start to practice **American Sign Language** and see it on your computer screen
 
+![Alt](https://camo.githubusercontent.com/d9b0397d4b086b39ca1e528495359f3f4a4a164d/687474703a2f2f7777772e6c6966657072696e742e636f6d2f61736c3130312f66696e6765727370656c6c696e672f696d616765732f61626331323830783936302e706e67)
+
 At this point, you should be able to play with the Leap Motion on your computer
 
 ![Alt](http://puu.sh/lyXLR/fb9c733349.jpg)
