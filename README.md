@@ -6,7 +6,7 @@ Asl-to-Speech is a wearable technology that translates American Sign Language (A
 
 The [Leap Motion Controller](https://www.leapmotion.com/) uses infrared cameras to track the movement of your hands and fingers. In this project, hand gestures are picked up by the Leap Motion and are translated into text. The text is then translated into speech by Nuance's speech platform.
 
-This project also has the option to use the [Myo gesture control armband](https://myo.com) to translate arm gestures into speech.
+This project also has the option to use the [Myo gesture control armband](https://myo.com) to translate arm gestures into speech. This hardware reads the muscle activity in your forearm and gives you touch-free control of technology with hand gestures and motion.
 
 ## Demo
 
