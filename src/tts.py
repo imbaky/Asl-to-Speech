@@ -263,7 +263,7 @@ def main():
     convertToWav(output_file)
     playWav(output_file+'.wav')
 
-    # python3 tts.py creds.json "Hello, how are you?" output.pcm
+    # py -3 tts.py creds.json "Hello, how are you?" output.pcm
 
 if __name__ == '__main__':
     main()
