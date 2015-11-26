@@ -12,7 +12,7 @@ import Leap
 from Leap import CircleGesture, KeyTapGesture, ScreenTapGesture, SwipeGesture
 
 __author__ = "Edward Tran"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 class SignListener(Leap.Listener):
@@ -52,20 +52,18 @@ class SignListener(Leap.Listener):
 	def on_frame(self, controller):
 	    # Get the most recent frame and report some basic information
 		frame = controller.frame()
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SIGN LISTENER MAIN LOGIC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		for hand in frame.hands:
 			handType = "Left hand" if hand.is_left else "Right hand"
 
-			if hand.fingers[1].direction.y > 0\
+            # Number One
+			if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
+                and hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y < 0\
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
-				if (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0:
-				 	# Number One
 					self.text = "One"
-				else:
-					# Letter D
-					self.text = "D"
-
 			# Number Two
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
@@ -81,17 +79,13 @@ class SignListener(Leap.Listener):
 				and hand.fingers[3].direction.y < 0\
 				and hand.fingers[4].direction.y < 0:
 				self.text = "Three"
-
+            # Number Four
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) > 0\
 				and hand.fingers[1].direction.y > 0\
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-					if abs(hand.fingers[1].direction.x - hand.fingers[4].direction.x) < 0.15:
-						self.text = "B"
-					else:
-						self.text = "Four"
-
+					self.text = "Four"
 			# Number Five
 			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
 				and hand.fingers[0].direction.y > 0\
@@ -131,40 +125,9 @@ class SignListener(Leap.Listener):
 				and hand.fingers[2].direction.y > 0\
 				and hand.fingers[3].direction.y > 0\
 				and hand.fingers[4].direction.y > 0:
-				if abs(hand.fingers[2].direction.x - hand.fingers[3].direction.x) < 0.15\
-					and abs(hand.fingers[3].direction.x - hand.fingers[4].direction.x) < 0.15:
-					self.text = "F"
-				else:
-					self.text = "Nine"
+				self.text = "Nine"
 
-			elif hand.fingers[1].direction.y < 0\
-				and hand.fingers[2].direction.y < 0\
-				and hand.fingers[3].direction.y < 0\
-				and hand.fingers[4].direction.y < 0\
-				and hand.fingers[1].direction.z > 0\
-				and hand.fingers[2].direction.z > 0\
-				and hand.fingers[3].direction.z > 0\
-				and hand.fingers[4].direction.z > 0:
-				# Letter A
-				if hand.fingers[0].direction.y > 0.15\
-					and (is_hand_right(hand.is_right)*hand.fingers[0].direction.x < 0):
-					self.text = "A"
-				#Letter S
-				elif hand.fingers[0].direction.y > -0.12:
-					self.text = "S"
-				#Letter E
-				else:
-					self.text = "E"
-
-			elif (is_hand_right(hand.is_right)*hand.fingers[0].direction.x) < 0\
-				and (is_hand_right(hand.is_right)*hand.fingers[1].direction.x) < 0\
-				and (is_hand_right(hand.is_right)*hand.fingers[3].direction.x) > 0\
-				and (is_hand_right(hand.is_right)*hand.fingers[4].direction.x) > 0:
-
-				if (is_hand_right(hand.is_right)*hand.fingers[2].direction.x) > 0:
-					self.text = "G"
-				else:
-					self.text = "H"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 			if self.text != self.prev_frame_text:
 				textToSpeech(self.text)
@@ -173,7 +136,7 @@ class SignListener(Leap.Listener):
 
 def textToSpeech(text):
 	print text
-	os.system('python3 tts.py creds.json ' + "\"" + text + "\"" + ' output.pcm')
+	os.system('py -3 tts.py creds.json ' + "\"" + text + "\"" + ' output.pcm')
 
 def is_hand_right(isRight):
 	if isRight:
@@ -200,4 +163,4 @@ def main():
 if __name__ == "__main__":
 	main()
 
-#python2 SignListener.py
+#py SignListener.py
