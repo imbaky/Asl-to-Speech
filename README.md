@@ -144,9 +144,15 @@ At this point, you should be able to play with the Leap Motion on your computer
 
 * Press **ctrl** + **s**
 
-* Change the **File name** "\*.txt" to **creds.json**
+* Change the **File name** "\*.txt" to **creds.json** in the Asl-to-Speech/src directory (src folder)
 
 * Change the **Save as type** "Text Document(\*.txt)" to **All Files**
+
+* In the command prompt Go into the src folder by writing 
+
+  ```
+    cd src
+  ```
 
 * You can now test the speech module (Make sure your speaker is turned on)
 
@@ -156,10 +162,18 @@ At this point, you should be able to play with the Leap Motion on your computer
 
 If you hear "Hello, how are you?" then it is working
 
+At this point, you should be able to run **tts.py** without a problem
+
+With the **Leap Motion SDK** and the speech module all set up, you will be able to try our **SignListener.py**
+
+* In the command prompt, write
+
+  ```
+    py SignListener.py
+  ```
   
-At this point, all the set ups should work and you can start to code.
+You should see 
 
-
-
+  ![Alt](http://puu.sh/lyYgW/213170ffd8.jpg)
 
 
