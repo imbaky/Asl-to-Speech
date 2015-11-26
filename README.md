@@ -37,7 +37,7 @@ Click to watch a short video demo:
 2. Set up Nuance's Text-to-Speech API
 3. Installing Leap Motion Installer & SDK
 4. Installing Myo Client and SDK
-5. Starting coding
+5. Set up our project
 
 #### Python 2.7.10 and Python 3.5.1
 
