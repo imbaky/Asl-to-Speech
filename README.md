@@ -150,7 +150,7 @@ At this point, you should be able to play with the Leap Motion on your computer
 
 * Change the **Save as type** "Text Document(\*.txt)" to **All Files**
 
-* In the command prompt Go into the src folder by writing 
+* In the command prompt, go into the src folder by writing 
 
   ```
     cd src
