@@ -105,15 +105,18 @@ The path of the **Myo SDK** should look similar to **C:\myo-sdk-win-0.9.0\bin**
 * Download the [myo-python](https://github.com/NiklasRosenstein/myo-python/archive/master.zip) 
 * Extract the **master.zip** on your desktop
 * In the command prompt, go in the directory 
+
   ```
     cd myo-python
   ```
 * Add the path of the myo-python in your environment variables
 * Run setup.py
+
   ```
     py setup.py install
   ```
 * Install requirements.txt 
+
   ```
     pip install -r requirements.txt
   ```
