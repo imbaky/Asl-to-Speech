@@ -214,12 +214,17 @@ With the **Leap Motion SDK** and the speech module all set up, you will be able 
 You should see 
 
   ![Alt](http://puu.sh/lyYgW/213170ffd8.jpg)
+
+The **SignListener.py** includes the sign detection of the numbers from 0 to 9. The user should put the **Leap Motion** on a flat surface, then perform sign gestures in front of the computer screen. It is recommended to use the **Leap Motion Diagnostic Visualizer** to see how the computer detects the user's hand.
+
+  ![Alt](http://puu.sh/lAk7t/016b178fb9.jpg)
   
-With the **Leap Motion SDK**, the **Myo SDK** and the speech module set up, you will be able to try our **LeapMotion.py**
+With the **Leap Motion SDK**, the **Myo SDK** and the speech module set up, you will be able to try our **LeapMyo.py**
 
 * In the command prompt, write
 
   ```
     py LeapMyo.py
   ```
+
 
