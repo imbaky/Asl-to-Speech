@@ -214,5 +214,12 @@ With the **Leap Motion SDK** and the speech module all set up, you will be able 
 You should see 
 
   ![Alt](http://puu.sh/lyYgW/213170ffd8.jpg)
+  
+With the **Leap Motion SDK**, the **Myo SDK** and the speech module set up, you will be able to try our **LeapMotion.py**
 
+* In the command prompt, write
+
+  ```
+    py LeapMyo.py
+  ```
 
