@@ -9,7 +9,6 @@ if not (sys.platform == "win32" or sys.platform == "linux"):
 sys.path.insert(0, os.path.abspath(os.path.join(src_dir, arch_dir)))
 
 import Leap
-from Leap import CircleGesture, KeyTapGesture, ScreenTapGesture, SwipeGesture
 
 __author__ = "Edward Tran"
 __version__ = "1.0.1"
@@ -27,7 +26,6 @@ class SignListener(Leap.Listener):
 
 	def on_connect(self, controller):
 	    print "Connected"
-	    controller.enable_gesture(Leap.Gesture.TYPE_CIRCLE);
 
 	def on_disconnect(self, controller):
 	    # Note: not dispatched when running in a debugger.
