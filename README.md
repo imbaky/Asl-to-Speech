@@ -49,11 +49,11 @@ Click to watch a short video demo:
 * Click on **Advanced system settings**
 * Click on **Environment Variables** in the **Advanced** tab
 You should see this at this point
-![Alt](http://puu.sh/lxCVS/b136c76aea.png)
+![Alt](http://github.com/imbaky/Asl-to-Speech/blob/tutorial/img/env-var.png)
 * Click on the variable **Path** then click on **Edit**
 * Add at the end of the **Variable value** a **;** if it does not have one
 * Add **C:\Python27;C:\Python27\Scripts;C:\Python35;C:\Python35\Scripts;** after the **;**
-![Alt](http://puu.sh/lxE7c/de6f7ea637.png)
+![Alt](http://github.com/imbaky/Asl-to-Speech/blob/tutorial/img/edit-env-var.png)
 
 Make sure the paths **C:\Python27**, **C:\Python27\Scripts**, **C:\Python35**, **C:\Python35\Scripts** exist on your computer
 
@@ -94,7 +94,7 @@ You can now start to practice **American Sign Language** and see it on your comp
 
 At this point, you should be able to play with the Leap Motion on your computer
 
-![Alt](http://puu.sh/lyXLR/fb9c733349.jpg)
+![Alt](http://github.com/imbaky/Asl-to-Speech/blob/tutorial/img/visualizer-five.jpg)
 
 #### Myo Client and SDK
 
@@ -213,11 +213,11 @@ With the **Leap Motion SDK** and the speech module all set up, you will be able 
   
 You should see 
 
-  ![Alt](http://puu.sh/lyYgW/213170ffd8.jpg)
+  ![Alt](http://github.com/imbaky/Asl-to-Speech/blob/tutorial/img/cmd-signlistener.jpg)
 
 The **SignListener.py** includes the sign detection of the numbers from 0 to 9. The user should put the **Leap Motion** on a flat surface, then perform sign gestures in front of the computer screen. It is recommended to use the **Leap Motion Diagnostic Visualizer** to see how the computer detects the user's hand.
 
-  ![Alt](http://puu.sh/lAk7t/016b178fb9.jpg)
+  ![Alt](http://github.com/imbaky/Asl-to-Speech/blob/tutorial/img/cmd-visualizer-signlistener.jpg)
   
 With the **Leap Motion SDK**, the **Myo SDK** and the speech module set up, you will be able to try our **LeapMyo.py**
 
@@ -229,5 +229,5 @@ With the **Leap Motion SDK**, the **Myo SDK** and the speech module set up, you 
 
 To enable **Myo** sign detection, the user has to make a fist gesture as such
 
-  ![Alt](http://puu.sh/lAkkk/d8d15479e1.jpg)
-
+  ![Alt](http://github.com/imbaky/Asl-to-Speech/blob/tutorial/img/cmd-visualizer-leapmyo.jpg)
+  
