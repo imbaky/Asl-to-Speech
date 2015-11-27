@@ -121,6 +121,22 @@ The path of the **Myo SDK** should look similar to **C:\myo-sdk-win-0.9.0\bin**
     pip install -r requirements.txt
   ```
 
+At this point your myo should work and you will be able to run the sample code in the examples folder
+
+* From myo-python, you can go to the examples directory and run the sample code
+
+  ```
+    cd examples
+  ```
+  
+  ```
+    py hello_myo.py
+  ```
+  
+  ```
+    py feed_myo.py
+  ```
+
 #### Setting Up the project 
 
 * Download this [project](https://github.com/imbaky/Asl-to-Speech/archive/master.zip)
