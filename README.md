@@ -227,4 +227,7 @@ With the **Leap Motion SDK**, the **Myo SDK** and the speech module set up, you 
     py LeapMyo.py
   ```
 
+To enable **Myo** sign detection, the use has to make a fist gesture as such
+
+  ![Alt](http://puu.sh/lAkkk/d8d15479e1.jpg)
 
