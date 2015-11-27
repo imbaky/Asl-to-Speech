@@ -99,6 +99,43 @@ At this point, you should be able to play with the Leap Motion on your computer
 #### Myo Client and SDK
 
 * Go to [Myo](https://developer.thalmic.com/downloads)'s website and install the **Myo Connect** and **SDK**.
+* Extract the **Myo SDK** on your the same location where the folder of both versions of Python are located  (usually looks like **C:\**)
+* Add the path of the **Myo SDK** in your environment variables the same way you did for setting up python (check above)
+The path of the **Myo SDK** should look similar to **C:\myo-sdk-win-0.9.0\bin**
+* Download the [myo-python](https://github.com/NiklasRosenstein/myo-python/archive/master.zip) 
+* Extract the **master.zip** on your desktop
+* In the command prompt, go in the directory of myo-python/
+
+  ```
+    cd myo-python
+  ```
+* Add the path of the myo-python in your environment variables
+* Run setup.py
+
+  ```
+    py setup.py install
+  ```
+* Install requirements.txt 
+
+  ```
+    pip install -r requirements.txt
+  ```
+
+At this point your myo should work and you will be able to run the sample code in the examples folder
+
+* From myo-python, you can go to the examples directory and run the sample code
+
+  ```
+    cd examples
+  ```
+  
+  ```
+    py hello_myo.py
+  ```
+  
+  ```
+    py feed_myo.py
+  ```
 
 #### Setting Up the project 
 
@@ -150,7 +187,7 @@ At this point, you should be able to play with the Leap Motion on your computer
 
 * Change the **Save as type** "Text Document(\*.txt)" to **All Files**
 
-* In the command prompt Go into the src folder by writing 
+* In the command prompt, go into the src folder by writing 
 
   ```
     cd src
