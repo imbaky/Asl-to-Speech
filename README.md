@@ -104,7 +104,7 @@ At this point, you should be able to play with the Leap Motion on your computer
 The path of the **Myo SDK** should look similar to **C:\myo-sdk-win-0.9.0\bin**
 * Download the [myo-python](https://github.com/NiklasRosenstein/myo-python/archive/master.zip) 
 * Extract the **master.zip** on your desktop
-* In the command prompt, go in the directory 
+* In the command prompt, go in the directory of myo-python/
 
   ```
     cd myo-python
